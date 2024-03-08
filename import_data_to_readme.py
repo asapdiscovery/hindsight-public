@@ -31,7 +31,7 @@ content = {
 def main():
     todays_date = datetime.date(datetime.now()).isoformat()
 
-    token = os.getenv('GITHUB_TOKEN')
+    token = os.getenv('HINDSIGHT_PAT_TOKEN')
     if not token:
         raise ValueError("No token found")
 
