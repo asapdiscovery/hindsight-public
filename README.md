@@ -6,3 +6,11 @@
 ![FECs](plots/fecs.png)  |  **FECS**
 ---------------------------------|-----------------------
 *Free energy calculations performed by ASAP across all targets*
+
+![ML-GAT](plots/ml-gat.png)  |  **ML-GAT**
+---------------------------------|-----------------------
+*Graph Attention Machine learning predictions performed by ASAP across all targets*
+
+![ML-SCHNET](plots/ml-schnet.png)  |  **ML-SCHNET**
+---------------------------------|-----------------------
+*Schnet Machine learning predictions performed by ASAP across all targets*
