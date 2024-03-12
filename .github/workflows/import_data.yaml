@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '0 9 * * 0' # Run every Sunday at 9am UTC
+    - cron: '0 11 * * 0' # Run every Sunday at 11am UTC
 
 jobs:
   run-script:
