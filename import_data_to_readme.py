@@ -64,7 +64,7 @@ def main():
     repo = g.get_repo("asapdiscovery/hindsight")
 
     # copy frontpage stuff
-    for local, remote in content.items():
+    #for local, remote in content.items():
         #write_from_repo_to_local(repo, remote, local)
 
     # now copy whole file structure for detail
