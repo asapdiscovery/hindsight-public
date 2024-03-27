@@ -3,9 +3,6 @@
 ---------------------------------|-----------------------
 *Docking predictions performed by ASAP across all targets*
 
-![FECs](plots/frontpage/fecs.png)  |  **FECS**
----------------------------------|-----------------------
-*Free energy calculations performed by ASAP across all targets*
 
 ![ML-GAT](plots/frontpage/ml-gat.png)  |  **ML-GAT**
 ---------------------------------|-----------------------
