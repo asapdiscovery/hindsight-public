@@ -22,10 +22,10 @@ def write_from_repo_to_local(repo, remote_path, local_path):
 
 todays_date = datetime.date(datetime.now()).isoformat()
 content = {
-"./plots/docking.png": f"hindsight/outputs/plots/docking/cross_moleculeset/{todays_date}_all_vs_cdd.png",
-"./plots/fecs.png": f"hindsight/outputs/plots/fecs/all_fecs_all_targets_all_msets/{todays_date}.png",
-"./plots/ml-gat.png": f"hindsight/outputs/plots/ml-gat/cross_moleculeset/{todays_date}_all_vs_cdd.png",
-"./plots/ml-schnet.png": f"hindsight/outputs/plots/ml-schnet/cross_moleculeset/{todays_date}_all_vs_cdd.png",
+"./plots/frontpage/docking.png": f"hindsight/outputs/plots/docking/cross_moleculeset/{todays_date}_all_vs_cdd.png",
+"./plots/frontpage/fecs.png": f"hindsight/outputs/plots/fecs/all_fecs_all_targets_all_msets/{todays_date}.png",
+"./plots/frontpage/ml-gat.png": f"hindsight/outputs/plots/ml-gat/cross_moleculeset/{todays_date}_all_vs_cdd.png",
+"./plots/frontpage/ml-schnet.png": f"hindsight/outputs/plots/ml-schnet/cross_moleculeset/{todays_date}_all_vs_cdd.png",
 }
 
 def main():
