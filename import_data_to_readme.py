@@ -65,7 +65,7 @@ def main():
 
     # copy frontpage stuff
     for local, remote in content.items():
-        write_from_repo_to_local(repo, remote, local)
+        #write_from_repo_to_local(repo, remote, local)
 
     # now copy whole file structure for detail
     copy_recursive(repo)
