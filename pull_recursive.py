@@ -1,5 +1,6 @@
 from datetime import datetime
 from github import Github, Auth
+from pathlib import Path
 import os
 
 
@@ -48,6 +49,9 @@ def main():
              # strip first three dirs from path
             local_path = "/".join(path.split("/")[3:])
             local_path = "plots/detail/" + local_path
+            path_var = Path(local_path)
+            parent = path_var.parent
+            parent.mkdir(parents=True, exist_ok=True)
             write_from_repo_to_local(repo, path, local_path)
 
 
