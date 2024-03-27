@@ -1,7 +1,7 @@
 from datetime import datetime
 from github import Github, Auth
 import os
-
+from pathlib import Path
 
 def write_from_repo_to_local(repo, remote_path, local_path):
     found = False
