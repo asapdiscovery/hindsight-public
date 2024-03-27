@@ -20,6 +20,19 @@ def write_from_repo_to_local(repo, remote_path, local_path):
     else:
         print(f"File not found: {remote_path}")
 
+
+
+def copy_recursive():
+    contents = repo.get_contents("hindsight/outputs/plots")
+    while contents:
+        file_content = contents.pop(0)
+        if file_content.type == "dir":
+            contents.extend(repo.get_contents(file_content.path))
+        else:
+            path = file_content.path
+            
+
+
 todays_date = datetime.date(datetime.now()).isoformat()
 content = {
 "./plots/frontpage/docking.png": f"hindsight/outputs/plots/docking/cross_moleculeset/{todays_date}_all_vs_cdd.png",
@@ -43,8 +56,12 @@ def main():
 
     repo = g.get_repo("asapdiscovery/hindsight")
 
+    # copy frontpage stuff
     for local, remote in content.items():
         write_from_repo_to_local(repo, remote, local)
+
+    # now copy whole file structure for detail
+
 
     print("Done")
 

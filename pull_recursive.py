@@ -3,6 +3,24 @@ from github import Github, Auth
 import os
 
 
+def write_from_repo_to_local(repo, remote_path, local_path):
+    found = False
+    try:
+        contents = repo.get_contents(remote_path)
+        found = True
+    except Exception as e:
+        print(f"Error: {e}")
+
+        
+    if found:
+        print(f"Found: {remote_path}") 
+        with open(local_path, "wb") as file:
+            file.write(contents.decoded_content)
+        print(f"File written: {local_path}")
+    else:
+        print(f"File not found: {remote_path}")
+
+
 
 def main():
     todays_date = datetime.date(datetime.now()).isoformat()
@@ -25,8 +43,12 @@ def main():
         if file_content.type == "dir":
             contents.extend(repo.get_contents(file_content.path))
         else:
-            print(file_content)
-            print(file_content.path)
+            path = file_content.path
+            print(path)
+             # strip first three dirs from path
+            local_path = "/".join(path.split("/")[3:])
+            local_path = "plots/detail/" + local_path
+            write_from_repo_to_local(repo, path, local_path)
 
 
     print("Done")
