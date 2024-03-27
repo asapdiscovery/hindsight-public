@@ -22,7 +22,7 @@ def write_from_repo_to_local(repo, remote_path, local_path):
 
 
 
-def copy_recursive():
+def copy_recursive(repo):
     contents = repo.get_contents("hindsight/outputs/plots")
     while contents:
         file_content = contents.pop(0)
@@ -30,7 +30,14 @@ def copy_recursive():
             contents.extend(repo.get_contents(file_content.path))
         else:
             path = file_content.path
-            
+             # strip first three dirs from path
+            local_path = "/".join(path.split("/")[3:])
+            local_path = "plots/detail/" + local_path
+            path_var = Path(local_path)
+            parent = path_var.parent
+            parent.mkdir(parents=True, exist_ok=True)
+            write_from_repo_to_local(repo, path, local_path)
+
 
 
 todays_date = datetime.date(datetime.now()).isoformat()
@@ -61,7 +68,7 @@ def main():
         write_from_repo_to_local(repo, remote, local)
 
     # now copy whole file structure for detail
-
+    copy_recursive(repo)
 
     print("Done")
 
