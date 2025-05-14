@@ -49,16 +49,16 @@ jobs:
         env:
           SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
 
-      - name: Post to a Slack channel
-        id: slack_success
-        if: ${{ success() }}
-        uses: slackapi/slack-github-action@v1.25.0
-        with:
-          # Slack channel id, channel name, or user id to post message.
-          # See also: https://api.slack.com/methods/chat.postMessage#channels
-          # You can pass in multiple channels to post to by providing a comma-delimited list of channel IDs.
-          channel-id: 'core-compchem'
-          # For posting a simple plain text message
-          slack-message: "ASAP-hindsight data has been updated! Go check it out @ https://github.com/asapdiscovery/hindsight-public  :sunglasses: :sunglasses: :sunglasses:"
-        env:
-          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+      # - name: Post to a Slack channel
+      #   id: slack_success
+      #   if: ${{ success() }}
+      #   uses: slackapi/slack-github-action@v1.25.0
+      #   with:
+      #     # Slack channel id, channel name, or user id to post message.
+      #     # See also: https://api.slack.com/methods/chat.postMessage#channels
+      #     # You can pass in multiple channels to post to by providing a comma-delimited list of channel IDs.
+      #     channel-id: 'core-compchem'
+      #     # For posting a simple plain text message
+      #     slack-message: "ASAP-hindsight data has been updated! Go check it out @ https://github.com/asapdiscovery/hindsight-public  :sunglasses: :sunglasses: :sunglasses:"
+      #   env:
+      #     SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
